@@ -11,8 +11,9 @@ function Tasks() {
   const headers = { Authorization: `Bearer ${token}` };
 
   useEffect(() => {
-    fetchTasks();
-  }, []);
+  fetchTasks();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   const fetchTasks = async () => {
     try {

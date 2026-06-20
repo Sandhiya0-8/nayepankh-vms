@@ -14,9 +14,10 @@ function Attendance() {
   const headers = { Authorization: `Bearer ${token}` };
 
   useEffect(() => {
-    fetchAttendance();
-    fetchStats();
-  }, []);
+  fetchAttendance();
+  fetchStats();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   const fetchAttendance = async () => {
     try {

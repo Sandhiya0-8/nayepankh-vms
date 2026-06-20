@@ -15,11 +15,12 @@ function AdminPanel() {
 
   const headers = { Authorization: `Bearer ${token}` };
 
-  useEffect(() => {
-    fetchTasks();
-    fetchVolunteers();
-    fetchAttendance();
-  }, []);
+ useEffect(() => {
+  fetchTasks();
+  fetchVolunteers();
+  fetchAttendance();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   const fetchTasks = async () => {
     try {

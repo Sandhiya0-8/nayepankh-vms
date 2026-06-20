@@ -11,18 +11,19 @@ function Dashboard() {
   const headers = { Authorization: `Bearer ${token}` };
 
   useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const res = await axios.get('https://nayepankh-vms.onrender.com/api/attendance/stats', { headers });
-        setStats(res.data);
-        const taskRes = await axios.get('https://nayepankh-vms.onrender.com/api/tasks/my', { headers });
-        setTaskCount(taskRes.data.length);
-      } catch (err) {
-        console.log('Failed to load stats');
-      }
-    };
-    fetchStats();
-  }, []);
+  const fetchStats = async () => {
+    try {
+      const res = await axios.get('https://nayepankh-vms.onrender.com/api/attendance/stats', { headers });
+      setStats(res.data);
+      const taskRes = await axios.get('https://nayepankh-vms.onrender.com/api/tasks/my', { headers });
+      setTaskCount(taskRes.data.length);
+    } catch (err) {
+      console.log('Failed to load stats');
+    }
+  };
+  fetchStats();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   return (
     <div>
