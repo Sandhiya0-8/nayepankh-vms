@@ -13,9 +13,9 @@ function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/attendance/stats', { headers });
+        const res = await axios.get('https://nayepankh-vms.onrender.com/api/attendance/stats', { headers });
         setStats(res.data);
-        const taskRes = await axios.get('http://localhost:5000/api/tasks/my', { headers });
+        const taskRes = await axios.get('https://nayepankh-vms.onrender.com/api/tasks/my', { headers });
         setTaskCount(taskRes.data.length);
       } catch (err) {
         console.log('Failed to load stats');

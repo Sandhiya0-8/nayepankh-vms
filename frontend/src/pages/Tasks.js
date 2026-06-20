@@ -16,7 +16,7 @@ function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks/my', { headers });
+      const res = await axios.get('https://nayepankh-vms.onrender.com/api/tasks/my', { headers });
       setTasks(res.data);
     } catch (err) {
       setMessage('Failed to load tasks');
@@ -25,7 +25,7 @@ function Tasks() {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/tasks/${id}`, { status }, { headers });
+      await axios.put(`https://nayepankh-vms.onrender.com/api/tasks/${id}`, { status }, { headers });
       fetchTasks();
     } catch (err) {
       setMessage('Failed to update task');

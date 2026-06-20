@@ -23,7 +23,7 @@ function AdminPanel() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks', { headers });
+      const res = await axios.get('https://nayepankh-vms.onrender.com/api/tasks', { headers });
       setTasks(res.data);
     } catch (err) {
       console.log('Failed to load tasks');
@@ -32,7 +32,7 @@ function AdminPanel() {
 
   const fetchVolunteers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/volunteers', { headers });
+      const res = await axios.get('https://nayepankh-vms.onrender.com/api/volunteers', { headers });
       setVolunteers(res.data);
     } catch (err) {
       console.log('Failed to load volunteers');
@@ -41,7 +41,7 @@ function AdminPanel() {
 
   const fetchAttendance = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/attendance/all', { headers });
+      const res = await axios.get('https://nayepankh-vms.onrender.com/api/attendance/all', { headers });
       setAttendance(res.data);
     } catch (err) {
       console.log('Failed to load attendance');
@@ -53,7 +53,7 @@ function AdminPanel() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/tasks', form, { headers });
+      await axios.post('https://nayepankh-vms.onrender.com/api/tasks', form, { headers });
       setMessage('Task created successfully! ✅');
       setIsError(false);
       setForm({ title: '', description: '', assignedTo: '', dueDate: '' });

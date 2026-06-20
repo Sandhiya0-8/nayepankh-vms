@@ -20,7 +20,7 @@ function Attendance() {
 
   const fetchAttendance = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/attendance/my', { headers });
+      const res = await axios.get('https://nayepankh-vms.onrender.com/api/attendance/my', { headers });
       setRecords(res.data);
     } catch (err) {
       console.log('Failed to load attendance');
@@ -29,7 +29,7 @@ function Attendance() {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/attendance/stats', { headers });
+      const res = await axios.get('https://nayepankh-vms.onrender.com/api/attendance/stats', { headers });
       setStats(res.data);
     } catch (err) {
       console.log('Failed to load stats');
@@ -39,7 +39,7 @@ function Attendance() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/attendance/mark', form, { headers });
+      await axios.post('https://nayepankh-vms.onrender.com/api/attendance/mark', form, { headers });
       setMessage('Attendance marked successfully for today! ✅');
       setIsError(false);
       setForm({ hoursLogged: '', note: '' });

@@ -15,7 +15,7 @@ function Register() {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', form);
+      const res = await axios.post('https://nayepankh-vms.onrender.com/api/auth/register', form);
       login(res.data.user, res.data.token);
       navigate('/dashboard');
     } catch (err) {
